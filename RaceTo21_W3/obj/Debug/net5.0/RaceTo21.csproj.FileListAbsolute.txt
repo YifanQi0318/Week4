@@ -78,3 +78,19 @@ D:\迅雷下载\WeChat Files\wxid_z2lp685b3eag22\FileStorage\File\2023-02\HW4_Yi
 D:\迅雷下载\WeChat Files\wxid_z2lp685b3eag22\FileStorage\File\2023-02\HW4_Yiran_Du\HW4_Yiran_Du\RaceTo21_W3\obj\Debug\net5.0\RaceTo21_W3.pdb
 D:\迅雷下载\WeChat Files\wxid_z2lp685b3eag22\FileStorage\File\2023-02\HW4_Yiran_Du\HW4_Yiran_Du\RaceTo21_W3\obj\Debug\net5.0\RaceTo21.genruntimeconfig.cache
 D:\迅雷下载\WeChat Files\wxid_z2lp685b3eag22\FileStorage\File\2023-02\HW4_Yiran_Du\HW4_Yiran_Du\RaceTo21_W3\obj\Debug\net5.0\ref\RaceTo21_W3.dll
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\obj\Debug\net5.0\RaceTo21.csproj.AssemblyReference.cache
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\obj\Debug\net5.0\RaceTo21.GeneratedMSBuildEditorConfig.editorconfig
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\obj\Debug\net5.0\RaceTo21.AssemblyInfoInputs.cache
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\obj\Debug\net5.0\RaceTo21.AssemblyInfo.cs
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\obj\Debug\net5.0\RaceTo21.csproj.CoreCompileInputs.cache
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\obj\Debug\net5.0\RaceTo21_W3.dll
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\obj\Debug\net5.0\refint\RaceTo21_W3.dll
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\obj\Debug\net5.0\RaceTo21_W3.pdb
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\bin\Debug\net5.0\RaceTo21_W3.exe
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\bin\Debug\net5.0\RaceTo21_W3.deps.json
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\bin\Debug\net5.0\RaceTo21_W3.runtimeconfig.json
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\bin\Debug\net5.0\RaceTo21_W3.runtimeconfig.dev.json
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\bin\Debug\net5.0\RaceTo21_W3.dll
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\bin\Debug\net5.0\RaceTo21_W3.pdb
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\obj\Debug\net5.0\RaceTo21.genruntimeconfig.cache
+D:\HW4_Yiran_Du\HW4_Yiran_Du\Week4\RaceTo21_W3\obj\Debug\net5.0\ref\RaceTo21_W3.dll
