@@ -29,26 +29,7 @@ namespace RaceTo21
             Console.WriteLine("*****************"); 
             Console.WriteLine("The final winner will be the one who has more than " + pointsToGameOver + " points!");
             Console.WriteLine("If everyone quits early, or if only one player is present, the player who has the highest points wins！");
-            /*Console.WriteLine("*****************");
-            Console.WriteLine("Do you want to open cheat mode? (Y/N)");
-            string response = Console.ReadLine();
-            while (true)
-            {
-                if (response.ToUpper().StartsWith("Y"))
-                {
-                    cheating = true;
-                    return;
-                }
-                else if (response.ToUpper().StartsWith("N"))
-                {
-                    cheating = false;
-                    return;
-                }
-                else
-                {
-                    Console.WriteLine("Please answer Y(es) or N(o)!");
-                }
-            }*/
+            
 
             nextTask = Tasks.GetNumberOfPlayers;
         }
@@ -66,6 +47,9 @@ namespace RaceTo21
          * Calls methods required to complete task
          * then sets nextTask.
          */
+
+
+
         public void DoNextTask()
         {
             Console.WriteLine("================================"); // this line should be elsewhere right?
@@ -94,10 +78,7 @@ namespace RaceTo21
                 Player player = players[currentPlayer];
                 if (player.status == PlayerStatus.active)
                 {
-                    /* Implementation:
-                     * A player can choose to draw up to 3 cards each turn, but they get
-                     * all cards at once; they don’t get to decide after each card
-                     */
+                   
                     int drawnCardNumber = cardTable.OfferHowManyCards(player);
 
                     if (drawnCardNumber != 0) // If the player want to draw cards
@@ -112,11 +93,11 @@ namespace RaceTo21
                         player.score = ScoreHand(player);
                         
 
-                        if (player.score > 21) // The player bust
+                        if (player.score > 21)
                         {
                                 player.status = PlayerStatus.bust;
 
-                                int losePoints = player.score - 21; // Implementation: If the player is bust, the player loses points equal to their hand total minus 21. (Level 2)
+                                int losePoints = player.score - 21; 
                                 player.points -= losePoints;
                                 cardTable.ShowHand(player);
 
@@ -127,22 +108,22 @@ namespace RaceTo21
                                 cardTable.ShowHand(player);
 
                         }
-                        else // The player still active
+                        else 
                         {
                             cardTable.ShowHand(player);
                             Console.Write("Do you want to stay? (Y/N)");
                             string response = Console.ReadLine();
-                            if (response.ToUpper().StartsWith("Y")) // The player want to stay
+                            if (response.ToUpper().StartsWith("Y")) 
                             {
                                 player.status = PlayerStatus.stay;
                             }
-                            else if (response.ToUpper().StartsWith("N")) // The player still want to play
+                            else if (response.ToUpper().StartsWith("N")) 
                             {
                                 player.status = PlayerStatus.active; 
                             }
                             else
                             {
-                                Console.WriteLine("Please answer Y(es) or N(o)!");
+                                Console.WriteLine("Please answer Y/N!");
                             }
 
                         }           
@@ -264,10 +245,10 @@ namespace RaceTo21
             {
                 if (player.status == PlayerStatus.bust)
                 {
-                    bustPlayerNumber++; // If one player bust, plus the bust player number
+                    bustPlayerNumber++; 
                 }
             }
-            // Check if all but one players are bust
+            
             if (bustPlayerNumber == players.Count - 1)
             {
                 return false;
@@ -289,7 +270,7 @@ namespace RaceTo21
        
         private Player DoFinalScoring()
         {
-            int highScore = 0; // Fix: reset this value
+            int highScore = 0; 
             foreach (var player in players)
             {
                 cardTable.ShowHand(player);
@@ -331,16 +312,13 @@ namespace RaceTo21
          * and shuffled. In addition, player list is shuffled, to ensure the same person doesn’t always win 
          * a tiebreaker. 
          */
-        /// <summary>
-        /// Check if the game can still continue. If it continues, then each player is asked to decide whether to continue with the next round
-        /// </summary>
-        /// Is called by DoNextTask() method
+        
         private void IsContinue()
         {
             
             int lastTotalPlayers = players.Count;
 
-            // Implementation: Game ends when one player reaches an agreed-upon score (level 2)
+            
             for (int i = 0; i < players.Count; i++)
             {
                 if (players[i].points > highPoints)
@@ -355,19 +333,19 @@ namespace RaceTo21
                 {
                     Console.Write(players[i].name + ", do you want to play another round? (Y/N)");
                     string response = Console.ReadLine();
-                    // If the player agree, all data of this player will be reset
+                  
                     if (response.ToUpper().StartsWith("Y"))
                     {
                         players[i].cards = new List<Card>();
                         players[i].score = 0;
                         players[i].status = PlayerStatus.active;
                     }
-                    // If the player disagree, the player will be removed
+                   
                     else if (response.ToUpper().StartsWith("N"))
                     {
                         giveUpPlayers.Add(players[i]);
                         players.RemoveAt(i);
-                        i--; // When data in the list is removed, the Index of all the data after it is subtracted by one, so here i is also subtracted by one to avoid skipping data. 
+                        i--;  
                     }
                     else
                     {
@@ -375,9 +353,8 @@ namespace RaceTo21
                     }
                 }
 
-                // When the number of players decreases, but is greater than one, shuffle player and reset currentPlayer to avoid error. And build a new deck and shuffle it.
-                // If players.Count < lastTotalPlayers, it is definitly someone give up
-                if (players.Count <= lastTotalPlayers && players.Count > 1) // The number of player minus and there are still two or more players
+                
+                if (players.Count <= lastTotalPlayers && players.Count > 1) 
                 {
                     shufflePlayer();
                     deck.buildDeck();
@@ -385,7 +362,7 @@ namespace RaceTo21
                     currentPlayer = 0;
                     nextTask = Tasks.IntroducePlayers;
                 }
-                else // Only one player or no player left
+                else 
                 {
                     Console.WriteLine("================================");
                     int winnerPoints = 0;
@@ -411,10 +388,7 @@ namespace RaceTo21
                         Console.WriteLine(players.Find(player => player.score == winnerPoints).name + " is the final winner!");
                     }
 
-                    if (giveUpPlayers.Find(player => player.score == winnerPoints) != null)
-                    {
-                        Console.WriteLine(giveUpPlayers.Find(player => player.score == winnerPoints).name + " is the final winner!");
-                    }                  
+                                      
 
                     Console.Write("Press <Enter> to exit... ");
                     while (Console.ReadKey().Key != ConsoleKey.Enter) { }
@@ -440,10 +414,7 @@ namespace RaceTo21
         }
 
 
-        /// <summary>
-        /// Shuffle player list
-        /// </summary>
-        /// Is called by DoNextTask() method
+        
         private void shufflePlayer()
         {
             Random rng = new Random();
