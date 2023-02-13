@@ -147,7 +147,7 @@ namespace RaceTo21
 
                         }           
                     }
-                    else // The player do not want to draw cards at the beginning of the round.
+                    else 
                     {
                         player.status = PlayerStatus.stay;
                     }
@@ -158,23 +158,23 @@ namespace RaceTo21
             }
             else if (nextTask == Tasks.CheckForEnd)
             {
-                if (!CheckActivePlayers()) // No players' status is active
+                if (!CheckActivePlayers()) 
                 {
-                    Player winner = DoFinalScoring(); // Get the winner
+                    Player winner = DoFinalScoring(); 
   
-                    if (winner != null) // Implementation: When a player win, the player earns the points equal to his score. (Level 1)
+                    if (winner != null) 
                     {
                         winner.points += winner.score; 
                     }
                    
 
-                    // Adjust: Put the winner detection out of the AnnounceWinner method. If no player draws card, the game will not stop.
-                    if (winner != null) // If there is a winner
+                   
+                    if (winner != null) 
                     {
                         cardTable.AnnounceWinner(winner);
-                        IsContinue(); // Check if the game can still continue
+                        IsContinue(); 
                     }
-                    else // There is no winner
+                    else 
                     {
                         cardTable.resultForNoDrawnCard(); // Add a new method to told all players that nobody draws card.
                         // Reset all players status
@@ -206,12 +206,7 @@ namespace RaceTo21
             }
         }
 
-        /// <summary>
-        /// Calculate the total score of the player's hand.
-        /// </summary>
-        /// <param name="player">The player's data</param>
-        /// <returns>the total score of the player's hand</returns>
-        /// Is called by DoNextTask() method
+      
         private int ScoreHand(Player player)
         {
             int score = 0;
@@ -250,24 +245,20 @@ namespace RaceTo21
             return score;
         }
 
-        /// <summary>
-        /// Check if the status of any players is active
-        /// </summary>
-        /// <returns>Return the judgment, if there is an active player, it is true, if not, it is false</returns>
-        /// Is called by DoNextTask() method
+        
         private bool CheckActivePlayers()
         {
-            // Adjust: When check the first winner, end the game
+            
             foreach (var player in players)
             {
                 if (player.status == PlayerStatus.win)
                 {
-                    return false; // check the first winner
+                    return false; 
                 }
             }
 
-            // Adjust: Returns the end signal if all but one player bust
-            int bustPlayerNumber = 0; // Save bust player number
+            
+            int bustPlayerNumber = 0; 
 
             foreach (var player in players)
             {
@@ -287,19 +278,15 @@ namespace RaceTo21
             {
                 if (player.status == PlayerStatus.active)
                 {
-                    return true; // at least one player is still going!
+                    return true; 
                 }
             }
 
-            return false; // everyone has stayed!
+            return false;
         }
 
 
-        /// <summary>
-        /// Get the winner.
-        /// </summary>
-        /// <returns>The winner's data</returns>
-        /// Is called by DoNextTask() method
+       
         private Player DoFinalScoring()
         {
             int highScore = 0; // Fix: reset this value

@@ -60,60 +60,70 @@ namespace RaceTo21
             return response;
         }
 
-        /// <summary>
-        /// To get answer from the player, how many cards do you want?
-        /// </summary>
-        /// <param name="player">Game object provides the player's data</param>
-        /// <returns>The number of cards the player want to draw</returns>
-        /// Is called by Game object
+
+
+
+        /**To do List
+         * * A player can choose to draw up to 3 cards each turn, but they get all cards at once; they don’t get to 
+        decide after each card (more risk, but can get to 21 faster!)
+         * **/
+
+
+
+
         public int OfferHowManyCards(Player player)
         {
             while (true)
             {
-                Console.Write(player.name + ", how many cards do you want? (0-3)");
+                Console.Write(player.name + "How many(0/1/2/3)?");
                 string response = Console.ReadLine();
                 if (int.TryParse(response, out int howManyCards))
                 {
-                    if (howManyCards < 4 && howManyCards >= 0)
+                    if (howManyCards <= 3 && howManyCards >= 0)
                     {
                         return howManyCards;
                     }
                     else
                     {
-                        Console.WriteLine("Please type 0, 1, 2 or 3!");
+                        Console.WriteLine("Type a valid namber");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Please type 0, 1, 2 or 3!");
+                    Console.WriteLine("Type a valid number");
                 }
             }
         }
 
-        /// <summary>
-        /// Display information about this player, the player's name, the hands the player has, the score, the status and the points.
-        /// </summary>
-        /// <param name="player">Game object provides the player's data</param>
-        /// Is called by Game object
+        /*To do List:Players who went “bust” lose points equal to their hand total minus 21. 
+            o Players who “stay” earn no points for the round.
+            o Game ends when one player reaches an agreed-upon score (for example, 100 points) or after an
+            agreed-upon number of rounds.
+                • Allow players to customize this number (rounds or score, whichever you choose) at start
+                of game.
+                    • At start of game, let players choose whether game will last a specific number of
+                    rounds or until an agreed-upon score is reached.*/
+
+
         public void ShowHand(Player player)
         {   
-            if (player.cards.Count > 0) // When the player has cards, running the following code
+            if (player.cards.Count > 0) 
             {
-                Console.Write(player.name + " has: ");
+                Console.Write(player.name + " has ");
 
-                string allCards = ""; // Adjust: Use string allCards to store all cards in the player hands
+                string allCards = ""; 
 
                 foreach (Card card in player.cards)
                 {
-                    // Console.Write(card.fullName + ", ");
-                    allCards = allCards + card.fullName + ", "; // Adjust: allCards will save store the full name of all the cards + ", "
+                    
+                    allCards = allCards + card.fullName ; 
                 }
 
-                Console.WriteLine(allCards.Remove(allCards.Length - 2) + " = " + player.score + "/21 "); // Adjust: Use Remove function to remove the final ", " of allCards variable
+                Console.WriteLine(allCards.Remove(allCards.Length - 2) + " = " + player.score + "/21 "); 
 
-                Console.WriteLine(player.name + "'s points: " + player.points);
+                Console.WriteLine(player.name + "points: " + player.points);
 
-                if (player.status != PlayerStatus.active) // When the player status is not active, output the player's status
+                if (player.status != PlayerStatus.active) 
                 {
                     Console.Write("(" + player.status.ToString().ToUpper() + ")");
                 }
@@ -121,11 +131,7 @@ namespace RaceTo21
             }
         }
 
-        /// <summary>
-        /// Run the ShowHand() method for each player
-        /// </summary>
-        /// <param name="players">Game object provides list of players</param>
-        /// Is called by Game object
+    
         public void ShowHands(List<Player> players)
         {
             foreach (Player player in players)
@@ -134,25 +140,17 @@ namespace RaceTo21
             }
         }
 
-        /// <summary>
-        /// Show the winner of each round, and the points of the winner
-        /// </summary>
-        /// <param name="player">Game object provides the player's data</param>
-        /// Is called by Game object
+        
         public void AnnounceWinner(Player player)
         {
-            // Remove the detection here
-
+            
             Console.WriteLine(player.name + " wins!");
 
-            Console.WriteLine(player.name + "'s points: " + player.points);
+            Console.WriteLine(player.name + "'s points: " + player.points +  " , this player wins!");
 
         }
 
-        /// <summary>
-        /// Type the text "No player draws card!"
-        /// </summary>
-        /// Is called by Game object
+       
         public void resultForNoDrawnCard()
         {
             Console.WriteLine("No player draws card!");
