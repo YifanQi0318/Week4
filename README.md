@@ -1,5 +1,9 @@
 Added Features
 
+o (LEVEL 2)Gambler Game
+Each player will start with $100, and each player needs to choose the amount to bet each time the game starts,  the winner gets all the money back.
+
+
 o (LEVEL 1) At end of round, players are collectively asked if they want to keep playing. Players only enter Y 
 or N once, so discussion of continuing happens outside the game. If players choose to keep going, a new 
 deck is built and shuffled. In addition, player list is shuffled, to ensure the same person doesn’t always 
@@ -12,7 +16,7 @@ they are removed from the player list. If only 1 player remains, that player is 
 
 o (Extra)Change the player's card draw form, choose from 0-3 cards.
 
-o (Extra 2)
+o (Extra 2)Changed some Text
 
 
 
