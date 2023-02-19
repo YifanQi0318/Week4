@@ -1,30 +1,11 @@
-• What are the benefits of creating a Dictionary for the card images instead of storing the card images 
-as part of our instances of the Card class? What are the potential benefits if we make the card image 
-a field of the Card class instead? 
+Added Features
 
-A：Creating a Dictionary for the card images can be more convenient for management and reference instead of crude overall handling. If you create an image, you can only manage it in terms of naming.
-If you make an image a field, you can better reference the name.
-
-
- 
-• How else could we use a Dictionary to improve our program? What else do we need to refer to 
-regularly in this program that would benefit from a list of key/value pairs? 
-
-A：Add more resources to the dictionary, such as the shader change of the card (when this effect is triggered, the image changes)
-
-
-
- 
-• CardTable is the “display” class for this project. It controls the basics of user input and output. 
-Bearing in mind that we are going to completely change the display aspect of this project to involve 
-card graphics and point-and-click choices, what should be moved from other classes to this class?  
-o For example, some things in this class could be made a lot more generic, moving all 
-validation to Game.cs so that the CardTable only prints things to screen and reads data, 
-while the Game.cs class takes care of ensuring the user is following the rules. Why would we 
-do this? 
-
-
-
-
-
-F
+o (LEVEL 1) At end of round, players are collectively asked if they want to keep playing. Players only enter Y 
+or N once, so discussion of continuing happens outside the game. If players choose to keep going, a new 
+deck is built and shuffled. In addition, player list is shuffled, to ensure the same person doesn’t always 
+win a tiebreaker. 
+o (LEVEL 2) At end of round, each player is asked if they want to keep playing. If a player says no, 
+they are removed from the player list. If only 1 player remains, that player is the winner 
+(equivalent to everyone else “folding” in a card game). 
+o (Extra)Change the player's card draw form, choose from 0-3 cards.
+o (Extra 2)
