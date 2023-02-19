@@ -5,13 +5,21 @@ namespace RaceTo21
 {
 	public class Player
 	{
-		public string name;
+		public string name;//Save private name
 		public List<Card> cards = new List<Card>(); // To store the player's hands
 		public PlayerStatus status = PlayerStatus.active; // Keep the player's status
 		public int score; // Keep the score of the player's hands
 		public int points = 0; // To store the Points the player won
 
-		public Player(string n)
+
+        //public string Name
+		//{
+	    //get { return Name; }
+		//}
+
+
+
+        public Player(string n)
 		{
 			name = n;
         }
@@ -21,7 +29,7 @@ namespace RaceTo21
 		 */
 		public void Introduce(int playerNum)
 		{
-			Console.WriteLine("Hello, my name is " + name + " and I am player #" + playerNum);
+			Console.WriteLine("Hello, I'm " + name + ", player " + playerNum);
 		}
 	}
 }
