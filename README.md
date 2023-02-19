@@ -9,3 +9,9 @@ they are removed from the player list. If only 1 player remains, that player is 
 (equivalent to everyone else “folding” in a card game). 
 o (Extra)Change the player's card draw form, choose from 0-3 cards.
 o (Extra 2)
+
+
+
+For this project, I think the player's status bar needs to be edited so that the current number of cards, 
+score/chips, and status are displayed next to their name. The other is to set a counter in each link to 
+display the number of rounds. If necessary, I hope to add functions such as players choosing their own color/avatar.
