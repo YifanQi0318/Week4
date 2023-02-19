@@ -23,3 +23,8 @@ validation to Game.cs so that the CardTable only prints things to screen and rea
 while the Game.cs class takes care of ensuring the user is following the rules. Why would we 
 do this? 
 
+
+
+
+
+F
