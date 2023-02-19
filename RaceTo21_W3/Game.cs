@@ -26,9 +26,8 @@ namespace RaceTo21
             deck.buildDeck();
             deck.Shuffle();
             // deck.ShowAllCards();
-            Console.WriteLine("*****************"); 
-            Console.WriteLine("The final winner will be the one who has more than " + pointsToGameOver + " points!");
-            Console.WriteLine("If everyone quits early, or if only one player is present, the player who has the highest points wins！");
+            Console.WriteLine("********RaceTo21********"); 
+            Console.WriteLine("Welcome to RaceTo21, there will be only one winner！");
             
 
             nextTask = Tasks.GetNumberOfPlayers;
@@ -52,7 +51,7 @@ namespace RaceTo21
 
         public void DoNextTask()
         {
-            Console.WriteLine("================================"); // this line should be elsewhere right?
+            Console.WriteLine("==============RaceTo21Challengers================"); 
             if (nextTask == Tasks.GetNumberOfPlayers)
             {
                 numberOfPlayers = cardTable.GetNumberOfPlayers();
@@ -111,7 +110,7 @@ namespace RaceTo21
                         else 
                         {
                             cardTable.ShowHand(player);
-                            Console.Write("Do you want to stay? (Y/N)");
+                            Console.Write(player+",Do you want to stay? (Y/N)");
                             string response = Console.ReadLine();
                             if (response.ToUpper().StartsWith("Y")) 
                             {
@@ -180,7 +179,7 @@ namespace RaceTo21
                     nextTask = Tasks.PlayerTurn;
                 }
             }
-            else // we shouldn't get here...
+            else
             {
                 Console.WriteLine("I'm sorry, I don't know what to do now!");
                 nextTask = Tasks.GameOver;

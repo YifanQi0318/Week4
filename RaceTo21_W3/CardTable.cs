@@ -75,7 +75,7 @@ namespace RaceTo21
         {
             while (true)
             {
-                Console.Write(player.name + "How many(0/1/2/3)?");
+                Console.Write(player.name + ",How many cards you wanna draw(0/1/2/3)?");
                 string response = Console.ReadLine();
                 if (int.TryParse(response, out int howManyCards))
                 {
@@ -85,12 +85,12 @@ namespace RaceTo21
                     }
                     else
                     {
-                        Console.WriteLine("Type a valid namber");
+                        Console.WriteLine("Please Type a valid namber");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Type a valid number");
+                    Console.WriteLine("Please Type a valid number");
                 }
             }
         }
