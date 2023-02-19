@@ -14,7 +14,7 @@ namespace RaceTo21
         private Deck deck = new Deck(); // deck of cards
         private int currentPlayer = 0; // current player on list
         public Tasks nextTask; // keeps track of game state
-        private readonly bool cheating = true; // lets you cheat for testing purposes if true
+        private readonly bool cheating = false; // lets you cheat for testing purposes if true
         public bool Cheating { get { return cheating; } } // Use this to keep "cheating" readonly
 
         private int highPoints = 0; // Implementation: Set a variable to keep track the high points (part of Level2)
