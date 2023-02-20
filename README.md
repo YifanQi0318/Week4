@@ -1,6 +1,6 @@
 Added Features
 
-o (LEVEL 2)Gambler Game
+o (LEVEL 2)Gambler Game//not finished
 Each player will start with $100, and each player needs to choose the amount to bet each time the game starts,  the winner gets all the money back.
 
 
