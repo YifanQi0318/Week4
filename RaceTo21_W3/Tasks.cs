@@ -1,5 +1,5 @@
 ﻿using System;
-
+//Process of this game
 namespace RaceTo21
 {
     public enum Tasks
@@ -7,6 +7,7 @@ namespace RaceTo21
         GetNumberOfPlayers,
         GetNames,
         IntroducePlayers,
+        PlaceBet,
         PlayerTurn,
         CheckForEnd,
         GameOver

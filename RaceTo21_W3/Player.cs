@@ -10,6 +10,7 @@ namespace RaceTo21
 		public PlayerStatus status = PlayerStatus.active; // Keep the player's status
 		public int score; // Keep the score of the player's hands
 		public int points = 0; // To store the Points the player won
+		public int chips = 100;//Amount of Chips every player has
 
 
         //public string Name
@@ -31,6 +32,20 @@ namespace RaceTo21
 		{
 			Console.WriteLine("Hello, I'm " + name + ", player " + playerNum);
 		}
+
+		public int bet(int Chipamount) 
+		{
+		if(Chipamount > chips)
+			{
+				return -1;
+			}
+
+			chips -= Chipamount;
+			return Chipamount;
+
+		}
+
+		
 	}
 }
 

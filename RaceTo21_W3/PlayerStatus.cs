@@ -3,10 +3,10 @@ namespace RaceTo21
 {
 	public enum PlayerStatus
 	{
-		active,
-		stay,
-		bust,
-		win
+		active,//Player can continue draw cards
+		stay,//Player doesn't draw card, until active
+		bust,//Player loses game, can not draw card
+		win//Player win the game
 	}
 }
 

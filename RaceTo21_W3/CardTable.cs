@@ -49,6 +49,7 @@ namespace RaceTo21
          */
         public string GetPlayerName(int playerNum)
         {
+            
             Console.Write("What is the name of player# " + playerNum + "? ");
             string response = Console.ReadLine();
             while (response.Length < 1)
@@ -58,10 +59,42 @@ namespace RaceTo21
                 response = Console.ReadLine();
             }
             return response;
+           
         }
 
+        //Level 2 Gambler Game
+        
+        public int PlaceBet(List<Player> playerList)
+        {
+            Console.WriteLine("===============Bet Phase=================");
 
+            int TotalChips = 0;
 
+            foreach (Player p in playerList)
+            {
+                Console.Write(p.name + ",how many chips you wanna bet?");
+                string response = Console.ReadLine();//Get bets
+                if (int.TryParse(response, out int Chipamount)) 
+                {
+                    int PotChips = p.bet(Chipamount);
+                    if(PotChips >= 0)
+                    {
+                        TotalChips += Chipamount;
+                        break;//Use break to stop asking
+                    }
+                    else
+                    {
+                        Console.WriteLine("You don't have enough chips");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Enter a vaild number.");
+                }
+            }
+            Console.WriteLine($"As a result, the pot has ${TotalChips}.");
+            return TotalChips;
+        }
 
         /**To do List
          * * A player can choose to draw up to 3 cards each turn, but they get all cards at once; they don’t get to 
@@ -75,6 +108,7 @@ namespace RaceTo21
         {
             while (true)
             {
+                Console.WriteLine("********Draw Phase********");  
                 Console.Write(player.name + ",How many cards you wanna draw(0/1/2/3)?");
                 string response = Console.ReadLine();
                 if (int.TryParse(response, out int howManyCards))
@@ -103,6 +137,8 @@ namespace RaceTo21
                 of game.
                     • At start of game, let players choose whether game will last a specific number of
                     rounds or until an agreed-upon score is reached.*/
+
+
 
 
         public void ShowHand(Player player)
