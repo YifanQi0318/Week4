@@ -19,6 +19,9 @@ o (Extra)Change the player's card draw form, choose from 0-3 cards.
 o (Extra 2)Changed some Text
 
 
+About public: I didn't add private because I think it is enough to hold this data
+
+
 
 For this project, I think the player's status bar needs to be edited so that the current number of cards, 
 score/chips, and status are displayed next to their name. The other is to set a counter in each link to 
