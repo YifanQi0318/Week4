@@ -1,8 +1,12 @@
 Added Features
 
-o (LEVEL 2)Gambler Game//not finished
-
+o (LEVEL 1)Gambler Game//not finished
 Each player will start with $100, and each player needs to choose the amount to bet each time the game starts,  the winner gets all the money back.
+
+o (LEVEL 1)Score Counter
+Player will get/lose points after finishing game, and depends on if they are the winner
+
+
 
 
 o (LEVEL 1) At end of round, players are collectively asked if they want to keep playing. Players only enter Y 
@@ -20,7 +24,10 @@ o (Extra)Change the player's card draw form, choose from 0-3 cards.
 o (Extra 2)Changed some Text
 
 
-About public: I didn't add private because I think it is enough to hold this data， If the value entered in the game is negative, the console will prompt the player and return instead of producing an undesired effect.
+About public: 
+I private player's number cause it is a number that can not be used and changed after decided.
+I didn't add private because I think it is enough to hold this data， If the value entered in the game is negative, the console will prompt the player and return instead of producing an undesired effect.
+
 
 
 
