@@ -1,6 +1,7 @@
 Added Features
 
-o (LEVEL 2)Gambler Game
+o (LEVEL 2)Gambler Game//not finished
+
 Each player will start with $100, and each player needs to choose the amount to bet each time the game starts,  the winner gets all the money back.
 
 
@@ -17,6 +18,9 @@ they are removed from the player list. If only 1 player remains, that player is 
 o (Extra)Change the player's card draw form, choose from 0-3 cards.
 
 o (Extra 2)Changed some Text
+
+
+About public: I didn't add private because I think it is enough to hold this data， If the value entered in the game is negative, the console will prompt the player and return instead of producing an undesired effect.
 
 
 
