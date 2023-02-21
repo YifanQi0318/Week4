@@ -63,6 +63,8 @@ namespace RaceTo21
         }
 
         //Level 2 Gambler Game
+        //Call by Game object
+
         
         public int PlaceBet(List<Player> playerList)
         {
@@ -119,12 +121,12 @@ namespace RaceTo21
                     }
                     else
                     {
-                        Console.WriteLine("Please Type a valid namber");
+                        Console.WriteLine("Please Type a valid namber");//Wrong number
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Please Type a valid number");
+                    Console.WriteLine("Please Type a valid number");//Invaild number
                 }
             }
         }

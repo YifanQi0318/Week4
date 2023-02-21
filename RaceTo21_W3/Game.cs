@@ -9,11 +9,16 @@ namespace RaceTo21
         private List<Player> players = new List<Player>(); // list of objects containing player data
         
         private List<Player> giveUpPlayers = new List<Player>(); // To keep the data of players who give up
-
+        public PlayerStatus status = PlayerStatus.active;
         private CardTable cardTable; // object in charge of displaying game information
         private Deck deck = new Deck(); // deck of cards
+
         private int currentPlayer = 0; // current player on list
+
+        public int currentPot = 0;//current pot from players
+
         public Tasks nextTask; // keeps track of game state
+
         private readonly bool cheating = false; // lets you cheat for testing purposes if true
         public bool Cheating { get { return cheating; } } // Use this to keep "cheating" readonly
 
@@ -25,9 +30,8 @@ namespace RaceTo21
             cardTable = c;
             deck.buildDeck();
             deck.Shuffle();
-            // deck.ShowAllCards();
-            Console.WriteLine("********RaceTo21********"); 
-            Console.WriteLine("Welcome to RaceTo21, there will be only one winner！");
+          
+            Console.WriteLine("Welcome to RaceTo21, there will be only one winner！");//Introduction
             
 
             nextTask = Tasks.GetNumberOfPlayers;
@@ -69,8 +73,27 @@ namespace RaceTo21
             else if (nextTask == Tasks.IntroducePlayers)
             {
                 cardTable.ShowPlayers(players);
+                nextTask = Tasks.PlaceBet;
+            }
+            else if (nextTask == Tasks.PlaceBet)
+            {
+                currentPot = cardTable.PlaceBet(players.FindAll(player => player.status != PlayerStatus.bust));
+                nextTask= Tasks.FirstTurn;
+            }
+            else if (nextTask == Tasks.FirstTurn)
+            {
+                // This is same as Console.WriteLine() but I want it to be more like the card table is showing the message
+
+                foreach (Player p in players.FindAll(player => player.status != PlayerStatus.bust)) // Loop through the players who haven't quit 
+                {
+                    // offer a card to each player and calculate the score
+                    Card card = deck.DealTopCard();
+                    p.cards.Add(card);
+                    p.score = ScoreHand(p);
+                }
                 nextTask = Tasks.PlayerTurn;
             }
+
             else if (nextTask == Tasks.PlayerTurn)
             {
                 cardTable.ShowHands(players);
