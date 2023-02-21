@@ -55,7 +55,7 @@ namespace RaceTo21
 
         public void DoNextTask()
         {
-            Console.WriteLine("==============RaceTo21Challengers================"); 
+            Console.WriteLine("==============RaceTo21 Challengers Phase================"); 
             if (nextTask == Tasks.GetNumberOfPlayers)
             {
                 numberOfPlayers = cardTable.GetNumberOfPlayers();
@@ -77,14 +77,12 @@ namespace RaceTo21
             }
             else if (nextTask == Tasks.PlaceBet)
             {
-                currentPot = cardTable.PlaceBet(players.FindAll(player => player.status != PlayerStatus.bust));
+                currentPot = cardTable.PlaceBet(players.FindAll(player => player.status == PlayerStatus.active));
                 nextTask= Tasks.FirstTurn;
             }
             else if (nextTask == Tasks.FirstTurn)
             {
-                // This is same as Console.WriteLine() but I want it to be more like the card table is showing the message
-
-                foreach (Player p in players.FindAll(player => player.status != PlayerStatus.bust)) // Loop through the players who haven't quit 
+                foreach (Player p in players.FindAll(player => player.status == PlayerStatus.active)) // Loop through the players who haven't quit 
                 {
                     // offer a card to each player and calculate the score
                     Card card = deck.DealTopCard();
@@ -119,7 +117,7 @@ namespace RaceTo21
                         {
                                 player.status = PlayerStatus.bust;
 
-                                int losePoints = player.score - 21; 
+                                int losePoints = player.score - 5; 
                                 player.points -= losePoints;
                                 cardTable.ShowHand(player);
 

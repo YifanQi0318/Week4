@@ -8,6 +8,7 @@ namespace RaceTo21
         GetNames,
         IntroducePlayers,
         PlaceBet,
+        FirstTurn,
         PlayerTurn,
         CheckForEnd,
         GameOver
